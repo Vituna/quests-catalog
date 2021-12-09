@@ -50,3 +50,13 @@ export const Level = {
   Medium: 'medium',
   Easy: 'easy',
 }
+
+export const FilterType = {
+  AllQuests: 'Все квесты',
+  Adventures: 'adventures',
+  Horror: 'horror',
+  Mystic: 'mystic',
+  Detective: 'detective',
+  'Sci-fi': 'sci-fi'
+}
+

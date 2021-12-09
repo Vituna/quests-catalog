@@ -5,7 +5,7 @@ export const mockQuests = [
     description: "Средневековое кладбище таит в себе много страшных тайн. Местные жители говорят, что в склепе похоронен граф вампир, который по ночам выходит на охоту, чтобы испить человеческой крови. Через час солнце опустится за горизонт, успеете ли вы убить вампира и выбраться из склепа?",
     previewImg: "img/preview-sklep.jpg",
     coverImg: "img/cover-sklep.jpg",
-    type: "horror",
+    type: "adventures",
     level: "hard",
     peopleCount: [2, 5],
     duration: 120
@@ -17,7 +17,7 @@ export const mockQuests = [
     description: "Средневековое кладбище таит в себе много страшных тайн. Местные жители говорят, что в склепе похоронен граф вампир, который по ночам выходит на охоту, чтобы испить человеческой крови. Через час солнце опустится за горизонт, успеете ли вы убить вампира и выбраться из склепа?",
     previewImg: "img/preview-sklep.jpg",
     coverImg: "img/cover-sklep.jpg",
-    type: "horror",
+    type: "mystic",
     level: "medium",
     peopleCount: [2, 10],
     duration: 120
@@ -41,7 +41,7 @@ export const mockQuests = [
     description: "Средневековое кладбище таит в себе много страшных тайн. Местные жители говорят, что в склепе похоронен граф вампир, который по ночам выходит на охоту, чтобы испить человеческой крови. Через час солнце опустится за горизонт, успеете ли вы убить вампира и выбраться из склепа?",
     previewImg: "img/preview-sklep.jpg",
     coverImg: "img/cover-sklep.jpg",
-    type: "horror",
+    type: "detective",
     level: "easy",
     peopleCount: [0, 1],
     duration: 120

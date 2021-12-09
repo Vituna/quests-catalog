@@ -8,8 +8,8 @@ import {getCurrentFilter} from '../../../../store/filter/selectors';
 import {changeCurrentFilter} from '../../../../store/action';
 
 
-import {Filers} from '../../../../const';
-import {getTranslationLevel} from '../../../../utils';
+import {Filers, FilterType} from '../../../../const';
+import {getTranslationLevel, getTranslationFilter} from '../../../../utils';
 
 import {mockQuests} from '../../../../mock';
 
@@ -21,6 +21,8 @@ const QuestsCatalog = () => {
   const onFilterChange = (title) => {
     dispatch(changeCurrentFilter(title))
   }
+
+  const quests = mockQuests.filter((offer) => currentFilter === getTranslationFilter(offer.type) || currentFilter === FilterType.AllQuests);
 
   return (
     <>
@@ -38,7 +40,7 @@ const QuestsCatalog = () => {
     </S.Tabs>
 
     <S.QuestsList>
-    {mockQuests.map(({id, title, peopleCount, level}) => {
+    {quests.map(({id, title, peopleCount, level}) => {
       return (
         <S.QuestItem key={id}>
         <S.QuestItemLink to={`quest/${id}`}>
