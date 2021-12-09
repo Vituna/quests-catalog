@@ -1,19 +1,34 @@
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './quests-catalog.styled';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import {Filers} from '../../../../const'
-import {getTranslationLevel} from '../../../../utils'
+import {getCurrentFilter} from '../../../../store/filter/selectors';
+import {changeCurrentFilter} from '../../../../store/action';
 
-import {mockQuests} from '../../../../mock'
 
-const QuestsCatalog = () => (
-  <>
+import {Filers} from '../../../../const';
+import {getTranslationLevel} from '../../../../utils';
+
+import {mockQuests} from '../../../../mock';
+
+const QuestsCatalog = () => {
+  const dispatch = useDispatch();
+
+  const currentFilter = useSelector(getCurrentFilter);
+
+  const onFilterChange = (title) => {
+    dispatch(changeCurrentFilter(title))
+  }
+
+  return (
+    <>
     <S.Tabs>
       {Filers.map(({title, icon: Icon}) => {
         return (
-          <S.TabItem>
-          <S.TabBtn isActive>
+          <S.TabItem onClick={() => onFilterChange(title)} key={title}>
+          <S.TabBtn isActive={currentFilter === title}>
             <Icon />
             <S.TabTitle>{title}</S.TabTitle>
           </S.TabBtn>
@@ -26,7 +41,7 @@ const QuestsCatalog = () => (
     {mockQuests.map(({id, title, peopleCount, level}) => {
       return (
         <S.QuestItem key={id}>
-        <S.QuestItemLink to="/quest">
+        <S.QuestItemLink to={`quest/${id}`}>
           <S.Quest>
             <S.QuestImage
               src="img/preview-sklep.jpg"
@@ -58,6 +73,7 @@ const QuestsCatalog = () => (
 
     </S.QuestsList>
   </>
-);
+  )
+  };
 
 export default QuestsCatalog;

@@ -43,6 +43,8 @@ export const Filers = [
   },
 ]
 
+export const DEFAULT_FILTER = 'Все квесты'
+
 export const Level = {
   Hard: 'hard',
   Medium: 'medium',
