@@ -1,15 +1,13 @@
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './quests-catalog.styled';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {getCurrentFilter} from '../../../../store/filter/selectors';
 import {getQuests} from '../../../../store/quests/selectors';
 import {changeCurrentFilter} from '../../../../store/action';
 
-
-import {Filers, FilterType} from '../../../../const';
+import {Filers, FilterType, AppRoute } from '../../../../const';
 import {getTranslationLevel, getTranslationFilter} from '../../../../utils';
 
 const QuestsCatalog = () => {
@@ -43,7 +41,7 @@ const QuestsCatalog = () => {
     {quests.map(({id, title, peopleCount, level, previewImg}) => {
       return (
         <S.QuestItem key={id}>
-        <S.QuestItemLink to={`quest/${id}`}>
+        <S.QuestItemLink to={AppRoute.Detailed+id}>
           <S.Quest>
             <S.QuestImage
               src={previewImg}
@@ -51,10 +49,8 @@ const QuestsCatalog = () => {
               height="232"
               alt={`квест ${title}`}
             />
-
             <S.QuestContent>
               <S.QuestTitle>{title}</S.QuestTitle>
-
               <S.QuestFeatures>
                 <S.QuestFeatureItem>
                   <IconPerson />

@@ -7,8 +7,9 @@ import { ReactComponent as IconScifi } from './assets/img/icon-scifi.svg';
 
 export const AppRoute = {
   Main: '/',
-  Quest: '/quest/:id',
-  Contacts: '/contacts'
+  Quest: '/detailed-quest/:id',
+  Contacts: '/contacts',
+  Detailed: 'detailed-quest/',
 }
 
 export const ApiRoute = {
@@ -44,6 +45,7 @@ export const Filers = [
 ]
 
 export const DEFAULT_FILTER = 'Все квесты'
+export const DEFAULT_MENU = 'Квесты'
 export const ERROR_MESSAGE = 'You have entered incorrect data!'
 
 export const Level = {

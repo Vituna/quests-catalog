@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 import {fetchCurrentQuestAction} from '../../store/api-actions';
 import {getQuest, getQuestLoading} from '../../store/quests/selectors';
 
+import NotFoundPage from '../no-found/not-found';
 import Preloader from '../loading-screen/loading-screen';
 import { BookingModal } from './components/components';
 
@@ -35,6 +36,10 @@ const DetailedQuest = () => {
 
   if (quest === null || questLoading) {
     return <Preloader />
+  }
+
+  if(!quest) {
+    return <NotFoundPage />
   }
 
   return (

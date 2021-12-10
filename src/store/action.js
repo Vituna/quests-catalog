@@ -8,6 +8,13 @@ export const changeCurrentFilter = createAction(
   ),
 );
 
+export const changeCurrentMenu = createAction(
+  ActionType.ChangeMenu,
+  (menu) => (
+    {payload: {menu}}
+  ),
+);
+
 export const loadQuests = createAction(
   ActionType.LoadQuests,
   (quests) => ({
