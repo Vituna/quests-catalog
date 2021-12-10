@@ -5,24 +5,24 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 import {getCurrentFilter} from '../../../../store/filter/selectors';
+import {getQuests} from '../../../../store/quests/selectors';
 import {changeCurrentFilter} from '../../../../store/action';
 
 
 import {Filers, FilterType} from '../../../../const';
 import {getTranslationLevel, getTranslationFilter} from '../../../../utils';
 
-import {mockQuests} from '../../../../mock';
-
 const QuestsCatalog = () => {
   const dispatch = useDispatch();
 
   const currentFilter = useSelector(getCurrentFilter);
+  const questsHome = useSelector(getQuests)
 
   const onFilterChange = (title) => {
     dispatch(changeCurrentFilter(title))
   }
 
-  const quests = mockQuests.filter((offer) => currentFilter === getTranslationFilter(offer.type) || currentFilter === FilterType.AllQuests);
+  const quests = questsHome.filter((offer) => currentFilter === getTranslationFilter(offer.type) || currentFilter === FilterType.AllQuests);
 
   return (
     <>
@@ -40,16 +40,16 @@ const QuestsCatalog = () => {
     </S.Tabs>
 
     <S.QuestsList>
-    {quests.map(({id, title, peopleCount, level}) => {
+    {quests.map(({id, title, peopleCount, level, previewImg}) => {
       return (
         <S.QuestItem key={id}>
         <S.QuestItemLink to={`quest/${id}`}>
           <S.Quest>
             <S.QuestImage
-              src="img/preview-sklep.jpg"
+              src={previewImg}
               width="344"
               height="232"
-              alt="квест Склеп"
+              alt={`квест ${title}`}
             />
 
             <S.QuestContent>

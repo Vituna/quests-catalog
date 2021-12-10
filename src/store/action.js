@@ -7,3 +7,21 @@ export const changeCurrentFilter = createAction(
     {payload: {filter}}
   ),
 );
+
+export const loadQuests = createAction(
+  ActionType.LoadQuests,
+  (quests) => ({
+    payload: {
+      quests,
+    },
+  }),
+);
+
+export const loadCurrentQuest = createAction(
+  ActionType.LoadCurrentQuest,
+  (quest) => ({
+    payload: {
+      quest,
+    },
+  }),
+);

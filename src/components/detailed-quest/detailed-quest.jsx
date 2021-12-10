@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MainLayout } from 'components/common/common';
 import { ReactComponent as IconClock } from 'assets/img/icon-clock.svg';
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { useParams } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+
+import {fetchCurrentQuestAction} from '../../store/api-actions';
+import {getQuest} from '../../store/quests/selectors';
 
 import { BookingModal } from './components/components';
 
@@ -12,18 +17,27 @@ import {getTranslationFilter, getTranslationLevel} from '../../utils';
 
 import {mockQuests} from '../../mock';
 
-
 const DetailedQuest = () => {
-  const params = useParams();
-  const quest = mockQuests[+params.id - 1];
+  const dispatch = useDispatch();
+
+  const {id} = useParams();
+  // const quest = mockQuests[id];
+
+
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
+
+  useEffect(() => {
+    dispatch(fetchCurrentQuestAction(id));
+  }, [dispatch, id]);
+
 
   const onBookingBtnClick = () => {
     setIsBookingModalOpened(true);
   };
 
-  // const quests = mockQuests.filter((offer) => id === offer.id);
-  // console.log(quests)
+  const quest = useSelector(getQuest)
+
+  console.log(quest)
 
 
   return (
