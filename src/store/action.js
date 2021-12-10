@@ -26,4 +26,7 @@ export const loadCurrentQuest = createAction(
   }),
 );
 
-export const loadQuestRequest = createAction(ActionType.LoadQuestRequest)
+export const loadQuestRequest = createAction(ActionType.LoadQuestRequest);
+export const sendApplicationRequest = createAction(ActionType.SendApplicationRequest);
+export const sendApplicationSuccess = createAction(ActionType.SendApplicationSuccess);
+export const sendApplicationError = createAction(ActionType.SendApplicationError);

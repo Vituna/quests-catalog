@@ -1,6 +1,8 @@
-import {loadQuests, loadCurrentQuest, loadQuestRequest} from './action';
+import cogoToast from 'cogo-toast';
 
-import { ApiRoute } from '../const';
+import {loadQuests, loadCurrentQuest, loadQuestRequest, sendApplicationRequest, sendApplicationSuccess, sendApplicationError} from './action';
+
+import { ApiRoute, ERROR_MESSAGE} from '../const';
 
 export const fetchQuestsAction = () => (
   async (dispatch, _getState, api) => {
@@ -17,6 +19,21 @@ export const fetchCurrentQuestAction = (id) => (
       dispatch(loadCurrentQuest(data))
     } catch {
       console.log('catch')
+    }
+  }
+)
+
+export const sendApplication = ({name, peopleCount, phone, isLegal}, resetForm) => (
+  async (dispatch, _getState, api) => {
+    dispatch(sendApplicationRequest());
+    console.log(name, peopleCount, phone, isLegal)
+    try {
+      await api.post(ApiRoute.Orders, {name, peopleCount, phone, isLegal});
+      dispatch(sendApplicationSuccess());
+      resetForm();
+    } catch {
+       dispatch(sendApplicationError());
+       cogoToast.error(ERROR_MESSAGE)
     }
   }
 )

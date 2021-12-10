@@ -44,6 +44,7 @@ export const Filers = [
 ]
 
 export const DEFAULT_FILTER = 'Все квесты'
+export const ERROR_MESSAGE = 'You have entered incorrect data!'
 
 export const Level = {
   Hard: 'hard',
@@ -59,4 +60,3 @@ export const FilterType = {
   Detective: 'detective',
   'Sci-fi': 'sci-fi'
 }
-

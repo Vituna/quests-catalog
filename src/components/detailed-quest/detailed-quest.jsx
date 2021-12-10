@@ -30,10 +30,10 @@ const DetailedQuest = () => {
   }, [dispatch, id]);
 
   const onBookingBtnClick = () => {
-    setIsBookingModalOpened(true);
+    setIsBookingModalOpened(!isBookingModalOpened);
   };
 
-  if (questLoading) {
+  if (quest === null || questLoading) {
     return <Preloader />
   }
 
@@ -78,7 +78,7 @@ const DetailedQuest = () => {
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal />}
+        {isBookingModalOpened && <BookingModal onButtonClick={onBookingBtnClick}/>}
       </S.Main>
     </MainLayout>
   );
