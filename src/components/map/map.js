@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import iconMarker from '../../assets/img/icon-blip.svg'
+import iconMarker from '../../assets/img/icon-blip.svg';
 import leaflet, { Marker } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -46,6 +46,6 @@ function Map() {
     >
     </div>
   )
-}
+};
 
 export default Map;

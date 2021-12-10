@@ -10,6 +10,6 @@ const PlugPage = () => (
       <S.Link to={AppRoute.Main}>Click here to return to the main page</S.Link>
     </S.Main>
   </MainLayout>
-)
+);
 
-export default PlugPage
+export default PlugPage;

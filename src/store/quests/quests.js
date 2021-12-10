@@ -31,6 +31,6 @@ const quests = createReducer(initialState, (builder) => {
   .addCase(sendApplicationError, (state) => {
     state.sendApplicationLoading = false;
   })
-})
+});
 
-export {quests}
+export {quests};

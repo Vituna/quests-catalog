@@ -20,8 +20,8 @@ const DetailedQuest = () => {
   const dispatch = useDispatch();
 
   const {id} = useParams();
-  const quest = useSelector(getQuest)
-  const questLoading = useSelector(getQuestLoading)
+  const quest = useSelector(getQuest);
+  const questLoading = useSelector(getQuestLoading);
 
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
@@ -35,7 +35,7 @@ const DetailedQuest = () => {
 
   if (quest === null || questLoading) {
     return <Preloader />
-  }
+  };
 
   return (
     <MainLayout>

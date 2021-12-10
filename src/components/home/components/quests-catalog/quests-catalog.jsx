@@ -14,11 +14,11 @@ const QuestsCatalog = () => {
   const dispatch = useDispatch();
 
   const currentFilter = useSelector(getCurrentFilter);
-  const questsHome = useSelector(getQuests)
+  const questsHome = useSelector(getQuests);
 
   const onFilterChange = (title) => {
     dispatch(changeCurrentFilter(title))
-  }
+  };
 
   const quests = questsHome.filter((offer) => currentFilter === getTranslationFilter(offer.type) || currentFilter === FilterType.AllQuests);
 

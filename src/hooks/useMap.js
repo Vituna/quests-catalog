@@ -8,7 +8,8 @@ const DefaultPosition = {
   Lat: 59.968294,
   Lng: 30.317811,
   Zoom: 17,
-}
+};
+
 function useMap(mapRef) {
   const [map, setMap] = useState(null);
 
@@ -35,6 +36,6 @@ function useMap(mapRef) {
     }
   }, [map, mapRef]);
   return map;
-}
+};
 
-export default useMap
+export default useMap;

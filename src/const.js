@@ -47,7 +47,8 @@ export const Filers = [
 
 export const DEFAULT_FILTER = 'Все квесты';
 export const DEFAULT_MENU = 'Квесты';
-export const ERROR_MESSAGE = 'You have entered incorrect data!';
+export const ERROR_MESSAGE_SEND_ORDER = 'You have entered incorrect data!';
+export const ERROR_MESSAGE_FETCH_QUEST = 'Data loading error!';
 
 export const Level = {
   Hard: 'hard',

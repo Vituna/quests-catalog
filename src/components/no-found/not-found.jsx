@@ -10,6 +10,6 @@ const NotFoundPage = () => (
       <S.Link to={AppRoute.Main}>Click here to return to the main page</S.Link>
     </S.Main>
   </MainLayout>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;
