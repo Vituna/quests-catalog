@@ -26,7 +26,6 @@ export const fetchCurrentQuestAction = (id) => (
 export const sendApplication = ({name, peopleCount, phone, isLegal}, resetForm) => (
   async (dispatch, _getState, api) => {
     dispatch(sendApplicationRequest());
-    console.log(name, peopleCount, phone, isLegal)
     try {
       await api.post(ApiRoute.Orders, {name, peopleCount, phone, isLegal});
       dispatch(sendApplicationSuccess());

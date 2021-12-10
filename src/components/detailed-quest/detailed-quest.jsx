@@ -60,7 +60,7 @@ const DetailedQuest = () => {
               </S.FeaturesItem>
               <S.FeaturesItem>
                 <IconPerson width="19" height="24" />
-                <S.FeatureTitle>{quest.peopleCount} чел</S.FeatureTitle>
+                <S.FeatureTitle>{quest.peopleCount.join('-')} чел</S.FeatureTitle>
               </S.FeaturesItem>
               <S.FeaturesItem>
                 <IconPuzzle width="24" height="24" />
