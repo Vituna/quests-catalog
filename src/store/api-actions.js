@@ -1,6 +1,6 @@
 import cogoToast from 'cogo-toast';
 
-import {loadQuests, loadCurrentQuest, loadQuestRequest, sendApplicationRequest, sendApplicationSuccess, sendApplicationError} from './action';
+import { loadQuests, loadCurrentQuest, loadQuestRequest, sendApplicationRequest, sendApplicationSuccess, sendApplicationError } from './action';
 
 import { ApiRoute, ERROR_MESSAGE} from '../const';
 

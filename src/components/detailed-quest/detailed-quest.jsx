@@ -8,14 +8,13 @@ import { useParams } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
-import {fetchCurrentQuestAction} from '../../store/api-actions';
-import {getQuest, getQuestLoading} from '../../store/quests/selectors';
+import { fetchCurrentQuestAction } from '../../store/api-actions';
+import { getQuest, getQuestLoading } from '../../store/quests/selectors';
 
-import NotFoundPage from '../no-found/not-found';
 import Preloader from '../loading-screen/loading-screen';
 import { BookingModal } from './components/components';
 
-import {getTranslationFilter, getTranslationLevel} from '../../utils';
+import { getTranslationFilter, getTranslationLevel } from '../../utils';
 
 const DetailedQuest = () => {
   const dispatch = useDispatch();
@@ -36,10 +35,6 @@ const DetailedQuest = () => {
 
   if (quest === null || questLoading) {
     return <Preloader />
-  }
-
-  if(!quest) {
-    return <NotFoundPage />
   }
 
   return (

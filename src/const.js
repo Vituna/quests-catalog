@@ -10,12 +10,13 @@ export const AppRoute = {
   Quest: '/detailed-quest/:id',
   Contacts: '/contacts',
   Detailed: 'detailed-quest/',
-}
+  Plug: '/plug',
+};
 
 export const ApiRoute = {
   Quests: '/quests',
   Orders: '/orders',
-}
+};
 
 export const Filers = [
   {
@@ -42,17 +43,17 @@ export const Filers = [
     title: 'Sci-fi',
     icon: IconScifi,
   },
-]
+];
 
-export const DEFAULT_FILTER = 'Все квесты'
-export const DEFAULT_MENU = 'Квесты'
-export const ERROR_MESSAGE = 'You have entered incorrect data!'
+export const DEFAULT_FILTER = 'Все квесты';
+export const DEFAULT_MENU = 'Квесты';
+export const ERROR_MESSAGE = 'You have entered incorrect data!';
 
 export const Level = {
   Hard: 'hard',
   Medium: 'medium',
   Easy: 'easy',
-}
+};
 
 export const FilterType = {
   AllQuests: 'Все квесты',
@@ -61,4 +62,13 @@ export const FilterType = {
   Mystic: 'mystic',
   Detective: 'detective',
   'Sci-fi': 'sci-fi'
-}
+};
+
+export const MenuType = {
+  Quests: 'Квесты',
+  Beginners: 'Новичкам',
+  Reviews: 'Отзывы',
+  Stock: 'Акции',
+  Contacts: 'Контакты',
+  Tel: 'tel:88003335599',
+};

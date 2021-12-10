@@ -1,7 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { changeCurrentFilter, changeCurrentMenu } from '../action';
 
-import {DEFAULT_FILTER, DEFAULT_MENU} from 'const';
+import { DEFAULT_FILTER, DEFAULT_MENU } from 'const';
 
 const initialState = {
   currentFilter: DEFAULT_FILTER,

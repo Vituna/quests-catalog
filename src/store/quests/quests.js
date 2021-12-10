@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import {loadQuests, loadCurrentQuest, loadQuestRequest, sendApplicationRequest, sendApplicationSuccess, sendApplicationError} from 'store/action';
+import { loadQuests, loadCurrentQuest, loadQuestRequest, sendApplicationRequest, sendApplicationSuccess, sendApplicationError } from 'store/action';
 
 const initialState = {
   quests: [],

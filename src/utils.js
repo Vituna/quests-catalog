@@ -1,4 +1,4 @@
-import {Level, FilterType} from './const'
+import { Level, FilterType } from './const';
 
 export const getTranslationLevel = (level) => {
   switch (level) {

@@ -34,7 +34,6 @@ function useMap(mapRef) {
       setMap(instance);
     }
   }, [map, mapRef]);
-
   return map;
 }
 

@@ -7,4 +7,4 @@ export const ActionType = {
   SendApplicationRequest: 'data/sendApplicationRequest',
   SendApplicationSuccess: 'data/sendApplicationSuccess',
   SendApplicationError: 'data/sendApplicationError',
-}
+};

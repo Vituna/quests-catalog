@@ -3,7 +3,7 @@ import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
-import {getSendApplicationLoading} from '../../../../store/quests/selectors';
+import { getSendApplicationLoading } from '../../../../store/quests/selectors';
 import { sendApplication } from '../../../../store/api-actions';
 
 const BookingModal = ({onButtonClick}) => {

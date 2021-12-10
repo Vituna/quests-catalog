@@ -10,6 +10,7 @@ import Home from 'components/home/home';
 import { appTheme } from './common';
 import * as S from './app.styled';
 
+import PlugPage from '../plug/plug'
 import NotFoundPage from '../no-found/not-found';
 
 import { AppRoute } from 'const';
@@ -27,6 +28,9 @@ const App = () => (
         </Route>
         <Route exact path={AppRoute.Main}>
           <Home />
+        </Route>
+        <Route exact path={AppRoute.Plug}>
+          <PlugPage />
         </Route>
         <Route>
           <NotFoundPage />

@@ -3,12 +3,12 @@ import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './quests-catalog.styled';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {getCurrentFilter} from '../../../../store/filter/selectors';
-import {getQuests} from '../../../../store/quests/selectors';
-import {changeCurrentFilter} from '../../../../store/action';
+import { getCurrentFilter } from '../../../../store/filter/selectors';
+import { getQuests } from '../../../../store/quests/selectors';
+import { changeCurrentFilter } from '../../../../store/action';
 
 import {Filers, FilterType, AppRoute } from '../../../../const';
-import {getTranslationLevel, getTranslationFilter} from '../../../../utils';
+import { getTranslationLevel, getTranslationFilter } from '../../../../utils';
 
 const QuestsCatalog = () => {
   const dispatch = useDispatch();
@@ -24,54 +24,52 @@ const QuestsCatalog = () => {
 
   return (
     <>
-    <S.Tabs>
-      {Filers.map(({title, icon: Icon}) => {
-        return (
-          <S.TabItem onClick={() => onFilterChange(title)} key={title}>
-          <S.TabBtn isActive={currentFilter === title}>
-            <Icon />
-            <S.TabTitle>{title}</S.TabTitle>
-          </S.TabBtn>
-        </S.TabItem>
-        )
-      })}
-    </S.Tabs>
+      <S.Tabs>
+        {Filers.map(({title, icon: Icon}) => {
+          return (
+            <S.TabItem onClick={() => onFilterChange(title)} key={title}>
+            <S.TabBtn isActive={currentFilter === title}>
+              <Icon />
+              <S.TabTitle>{title}</S.TabTitle>
+            </S.TabBtn>
+          </S.TabItem>
+          )
+        })}
+      </S.Tabs>
 
-    <S.QuestsList>
-    {quests.map(({id, title, peopleCount, level, previewImg}) => {
-      return (
-        <S.QuestItem key={id}>
-        <S.QuestItemLink to={AppRoute.Detailed+id}>
-          <S.Quest>
-            <S.QuestImage
-              src={previewImg}
-              width="344"
-              height="232"
-              alt={`квест ${title}`}
-            />
-            <S.QuestContent>
-              <S.QuestTitle>{title}</S.QuestTitle>
-              <S.QuestFeatures>
-                <S.QuestFeatureItem>
-                  <IconPerson />
-                  {peopleCount.join('-')} чел
-                </S.QuestFeatureItem>
-                <S.QuestFeatureItem>
-                  <IconPuzzle />
-                  {getTranslationLevel(level)}
-                </S.QuestFeatureItem>
-              </S.QuestFeatures>
-            </S.QuestContent>
-          </S.Quest>
-        </S.QuestItemLink>
-      </S.QuestItem>
-
-      )
-    })}
-
-    </S.QuestsList>
-  </>
+      <S.QuestsList>
+        {quests.map(({id, title, peopleCount, level, previewImg}) => {
+          return (
+            <S.QuestItem key={id}>
+              <S.QuestItemLink to={AppRoute.Detailed+id}>
+                <S.Quest>
+                  <S.QuestImage
+                    src={previewImg}
+                    width="344"
+                    height="232"
+                    alt={`квест ${title}`}
+                  />
+                  <S.QuestContent>
+                    <S.QuestTitle>{title}</S.QuestTitle>
+                    <S.QuestFeatures>
+                      <S.QuestFeatureItem>
+                        <IconPerson />
+                        {peopleCount.join('-')} чел
+                      </S.QuestFeatureItem>
+                      <S.QuestFeatureItem>
+                        <IconPuzzle />
+                        {getTranslationLevel(level)}
+                      </S.QuestFeatureItem>
+                    </S.QuestFeatures>
+                  </S.QuestContent>
+                </S.Quest>
+              </S.QuestItemLink>
+            </S.QuestItem>
+          )
+        })}
+      </S.QuestsList>
+    </>
   )
-  };
+};
 
 export default QuestsCatalog;
