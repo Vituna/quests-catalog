@@ -9,20 +9,19 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 import {fetchCurrentQuestAction} from '../../store/api-actions';
-import {getQuest} from '../../store/quests/selectors';
+import {getQuest, getQuestLoading} from '../../store/quests/selectors';
 
+import Preloader from '../loading-screen/loading-screen';
 import { BookingModal } from './components/components';
 
 import {getTranslationFilter, getTranslationLevel} from '../../utils';
-
-import {mockQuests} from '../../mock';
 
 const DetailedQuest = () => {
   const dispatch = useDispatch();
 
   const {id} = useParams();
-  // const quest = mockQuests[id];
-
+  const quest = useSelector(getQuest)
+  const questLoading = useSelector(getQuestLoading)
 
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
@@ -30,15 +29,13 @@ const DetailedQuest = () => {
     dispatch(fetchCurrentQuestAction(id));
   }, [dispatch, id]);
 
-
   const onBookingBtnClick = () => {
     setIsBookingModalOpened(true);
   };
 
-  const quest = useSelector(getQuest)
-
-  console.log(quest)
-
+  if (questLoading) {
+    return <Preloader />
+  }
 
   return (
     <MainLayout>

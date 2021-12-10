@@ -25,3 +25,5 @@ export const loadCurrentQuest = createAction(
     },
   }),
 );
+
+export const loadQuestRequest = createAction(ActionType.LoadQuestRequest)

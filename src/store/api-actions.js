@@ -1,4 +1,4 @@
-import {loadQuests, loadCurrentQuest} from './action';
+import {loadQuests, loadCurrentQuest, loadQuestRequest} from './action';
 
 import { ApiRoute } from '../const';
 
@@ -11,6 +11,7 @@ export const fetchQuestsAction = () => (
 
 export const fetchCurrentQuestAction = (id) => (
   async (dispatch, _getState, api) => {
+    dispatch(loadQuestRequest());
     try {
       const {data} = await api.get(`${ApiRoute.Quests}/${id}`)
       dispatch(loadCurrentQuest(data))
